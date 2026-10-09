@@ -1,0 +1,22 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Trading Journal</title><meta name="theme-color" content="#131722">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Journal">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div><h1 id="title">Resumen</h1><small>FundingPips 20992473 · hora CDMX</small></div></header>
+<main>
+<section id="resumen" class="view active"></section>
+<section id="calendario" class="view"></section>
+<section id="operaciones" class="view"></section>
+<section id="par" class="view"></section>
+</main>
+<div id="detail" class="sheet hidden"></div>
+<nav>
+<button data-v="resumen" class="on">📊<span>Resumen</span></button>
+<button data-v="calendario">📅<span>Calendario</span></button>
+<button data-v="operaciones">📋<span>Operaciones</span></button>
+<button data-v="par">💱<span>Por par</span></button>
+</nav>
+<script src="vendor/chart.umd.min.js"></script><script src="app.js"></script></body></html>
