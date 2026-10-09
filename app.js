@@ -200,4 +200,4 @@ function par(){const g={};D.trades.forEach(t=>(g[t.symbol]=g[t.symbol]||[]).push
 /* ---------- init ---------- */
 {const i=TABS.indexOf(location.hash.slice(1));if(i>0)go(i,false)}
 addEventListener('resize',()=>chart&&chart.resize());
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').then(r=>r.update());let _r=0;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!_r){_r=1;location.reload()}})}
