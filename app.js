@@ -200,4 +200,17 @@ function par(){const g={};D.trades.forEach(t=>(g[t.symbol]=g[t.symbol]||[]).push
 /* ---------- init ---------- */
 {const i=TABS.indexOf(location.hash.slice(1));if(i>0)go(i,false)}
 addEventListener('resize',()=>chart&&chart.resize());
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').then(r=>r.update());let _r=0;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!_r){_r=1;location.reload()}})}
+if('serviceWorker' in navigator){const _hc=!!navigator.serviceWorker.controller;navigator.serviceWorker.register('sw.js').then(r=>r.update());let _r=0;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!_r&&!window.__hr&&_hc){_r=1;location.reload()}})}
+
+/* ---------- botón actualizar (forzar última versión) ---------- */
+$('#refresh').onclick=async()=>{const b=$('#refresh');if(b.classList.contains('spin'))return;b.classList.add('spin');buzz(12);window.__hr=1;
+  const t0=Date.now(),lim=(p,ms=2500)=>Promise.race([Promise.resolve(p).catch(()=>{}),new Promise(r=>setTimeout(r,ms))]);
+  if('serviceWorker' in navigator)await lim(navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>lim(r.update(),1500).then(()=>r.unregister()))))); // quitar SW
+  if(window.caches)await lim(caches.keys().then(ks=>Promise.all(ks.map(k=>caches.delete(k))))); // borrar cachés
+  await lim(Promise.all(['./','index.html','app.js','style.css','data.json','manifest.json','sw.js'].map(f=>fetch(f+'?v='+t0,{cache:'reload'}).then(()=>fetch(f,{cache:'reload'})).catch(()=>{}))),4000); // refrescar caché HTTP
+  await new Promise(r=>setTimeout(r,Math.max(0,700-(Date.now()-t0))));
+  try{sessionStorage.setItem('tj-updated','1')}catch(e){}
+  const u=new URL(location.href);u.searchParams.set('v',Date.now());location.replace(u.toString());
+};
+try{if(sessionStorage.getItem('tj-updated')){sessionStorage.removeItem('tj-updated');setTimeout(()=>toast('Actualizado ✓'),400);
+  const u=new URL(location.href);if(u.searchParams.has('v')){u.searchParams.delete('v');history.replaceState(history.state,'',u.toString())}}}catch(e){}
