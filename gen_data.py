@@ -26,6 +26,7 @@ for r in csv.DictReader(open(CSV)):
         for f in (f'{tk}.png',f'thumb_{tk}.png'):
             if os.path.exists(os.path.join(CHARTS,f)): shutil.copy(os.path.join(CHARTS,f),os.path.join(HERE,'assets','charts',f))
     trades.append(dict(ticket=int(tk),symbol=r['symbol'],type=r['type'],volume=float(r['volume']),
+        open_srv=r['open_time'].replace('-','.'),close_srv=r['close_time'].replace('-','.'),date_srv=r['close_time'][:10],
         open_mx=o.strftime('%Y-%m-%dT%H:%M:%S'),close_mx=c.strftime('%Y-%m-%dT%H:%M:%S'),date=o.strftime('%Y-%m-%d'),
         open_price=op,sl=sl,tp=tp,close_price=cp,digits=3 if 'JPY' in r['symbol'] else 5,
         commission=float(r['commission']),profit=float(r['profit']),net=net,
@@ -34,12 +35,12 @@ for r in csv.DictReader(open(CSV)):
         image=img if os.path.exists(os.path.join(HERE,img)) else None,
         thumb=f'assets/charts/thumb_{tk}.png' if os.path.exists(os.path.join(HERE,'assets','charts',f'thumb_{tk}.png')) else None,
         motivo=old.get(tk,{}).get('motivo',''),pensaba=old.get(tk,{}).get('pensaba','')))
-trades.sort(key=lambda t:t['close_mx'])
+trades.sort(key=lambda t:t['close_srv'])
 W=[t['net'] for t in trades if t['net']>0]; L=[t['net'] for t in trades if t['net']<=0]
 bal=START; peak=START; mdd=0; curve=[{'label':'Inicio','balance':START}]
 for t in trades:
     bal=round(bal+t['net'],2); peak=max(peak,bal); mdd=max(mdd,peak-bal)
-    curve.append({'label':t['close_mx'],'balance':bal,'ticket':t['ticket']})
+    curve.append({'label':t['close_srv'],'profit':t['profit'],'net':t['net'],'balance':bal,'ticket':t['ticket']})
 n=len(trades); net=round(sum(t['net'] for t in trades),2)
 summary=dict(start=START,balance=bal,net=net,trades=n,wins=len(W),losses=len(L),
     win_rate=len(W)/n if n else 0,profit_factor=round(sum(W)/abs(sum(L)),2) if L and sum(L) else None,
