@@ -23,7 +23,7 @@ for r in csv.DictReader(open(CSV)):
     s=int((c-o).total_seconds()); tk=r['ticket']
     img=f'assets/charts/{tk}.png'
     if '--copy-charts' in sys.argv:
-        for f in (f'{tk}.png',f'thumb_{tk}.png'):
+        for f in (f'{tk}.png',f'thumb_{tk}.png',f'{tk}_m1.png'):
             if os.path.exists(os.path.join(CHARTS,f)): shutil.copy(os.path.join(CHARTS,f),os.path.join(HERE,'assets','charts',f))
     trades.append(dict(ticket=int(tk),symbol=r['symbol'],type=r['type'],volume=float(r['volume']),
         open_srv=r['open_time'].replace('-','.'),close_srv=r['close_time'].replace('-','.'),date_srv=r['close_time'][:10],
@@ -33,6 +33,7 @@ for r in csv.DictReader(open(CSV)):
         pips=round((cp-op)*sg/pip,1),rr=round(rew/risk,2) if risk>0 else None,
         duration=f'{s//3600}h {s%3600//60:02d}m',
         image=img if os.path.exists(os.path.join(HERE,img)) else None,
+        image_m1=f'assets/charts/{tk}_m1.png' if os.path.exists(os.path.join(HERE,'assets','charts',f'{tk}_m1.png')) else None,
         thumb=f'assets/charts/thumb_{tk}.png' if os.path.exists(os.path.join(HERE,'assets','charts',f'thumb_{tk}.png')) else None,
         motivo=old.get(tk,{}).get('motivo',''),pensaba=old.get(tk,{}).get('pensaba','')))
 trades.sort(key=lambda t:t['close_srv'])

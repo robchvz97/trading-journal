@@ -157,7 +157,7 @@ function anim(sel){$$(sel+'>*').forEach((e,i)=>{e.style.animation='none';void e.
 function detail(tk){const t=D.trades.find(x=>x.ticket===tk);if(!t)return;const p=v=>v.toFixed(t.digits),f=(k,v,c='')=>`<div><span>${k}</span><b class="${c}">${v}</b></div>`;
   $('#detail .sc').innerHTML=`<div class="tc"><div><h2 style="margin:0">${t.symbol} <span class="tag ${t.type}">${t.type==='buy'?'Compra':'Venta'}</span></h2><div class="k">#${t.ticket} · ${t.open_srv.slice(0,10)}</div></div><button class="ib" id="cls">✕</button></div>
   <div class="k" style="margin-top:6px">Profit</div><div class="big ${cls(t.profit)}">${usd(t.profit)}</div><div class="k" style="margin-bottom:8px">Comisión ${fmt(t.commission)} · Neto <b class="${cls(t.net)}">${usd(t.net)}</b></div>
-  ${t.image?`<div class="zoom"><img src="${t.image}" alt="Gráfico ${t.ticket}" draggable="false"><span class="hint">Pellizca / doble toque</span></div>`:'<div class="card empty">Sin gráfico</div>'}
+  ${[[t.image,'M5'],[t.image_m1,'M1 (zoom)']].map(([src,lb])=>src?`<div class="clabel">${lb}</div><div class="zoom"><img src="${src}" alt="Gráfico ${lb} ${t.ticket}" draggable="false" loading="lazy"><span class="hint">Pellizca / doble toque</span></div>`:`<div class="clabel">${lb}</div><div class="card empty">Sin gráfico ${lb}</div>`).join('')}
   <div class="card kv" style="margin-top:10px">${f('Entrada',p(t.open_price))}${f('Salida',p(t.close_price))}
   ${f('Hora apertura',t.open_srv+`<br><small class="k">CDMX ${mx(t.open_mx)}</small>`)}${f('Hora cierre',t.close_srv+`<br><small class="k">CDMX ${mx(t.close_mx)}</small>`)}
   ${f('Stop loss',p(t.sl),'neg')}${f('Take profit',p(t.tp),'pos')}${f('Lotes',t.volume)}${f('Duración',t.duration)}
@@ -165,7 +165,7 @@ function detail(tk){const t=D.trades.find(x=>x.ticket===tk);if(!t)return;const p
   <div class="card"><div class="k">Motivo de entrada</div><div class="note ${t.motivo?'':'empty'}">${esc(t.motivo)||'Sin anotar'}</div></div>
   <div class="card"><div class="k">Qué pensaba</div><div class="note ${t.pensaba?'':'empty'}">${esc(t.pensaba)||'Sin anotar'}</div></div>
   <div class="k" style="text-align:center">Horas principales: servidor MT5 (GMT+3) · secundarias: hora CDMX (UTC-6)</div>`;
-  $('#cls').onclick=()=>closeTop();const z=$('#detail .zoom');if(z)pinch(z);openSheet('#detail');
+  $('#cls').onclick=()=>closeTop();$$('#detail .zoom').forEach(pinch);openSheet('#detail');
 }
 function pinch(box){const img=$('img',box);let s=1,x=0,y=0,pts=new Map(),st=null,lastTap=0;
   const clamp=()=>{const w=box.clientWidth,h=box.clientHeight;s=Math.min(5,Math.max(1,s));x=Math.min(0,Math.max(w-w*s,x));y=Math.min(0,Math.max(h-h*s,y))};

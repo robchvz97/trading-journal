@@ -1,7 +1,7 @@
 {
  "account": "FundingPips 20992473",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-09T14:47:47",
+ "generated": "2026-10-09T16:21:19",
  "summary": {
   "start": 25000.0,
   "balance": 25003.42,
@@ -162,6 +162,7 @@
    "rr": 1.46,
    "duration": "1h 59m",
    "image": "assets/charts/217669162.png",
+   "image_m1": "assets/charts/217669162_m1.png",
    "thumb": "assets/charts/thumb_217669162.png",
    "motivo": "",
    "pensaba": ""
@@ -189,6 +190,7 @@
    "rr": 2.09,
    "duration": "1h 32m",
    "image": "assets/charts/217810244.png",
+   "image_m1": "assets/charts/217810244_m1.png",
    "thumb": "assets/charts/thumb_217810244.png",
    "motivo": "",
    "pensaba": ""
@@ -216,6 +218,7 @@
    "rr": 2.41,
    "duration": "1h 25m",
    "image": "assets/charts/217902683.png",
+   "image_m1": "assets/charts/217902683_m1.png",
    "thumb": "assets/charts/thumb_217902683.png",
    "motivo": "",
    "pensaba": ""
@@ -243,6 +246,7 @@
    "rr": null,
    "duration": "4h 04m",
    "image": "assets/charts/217997490.png",
+   "image_m1": "assets/charts/217997490_m1.png",
    "thumb": "assets/charts/thumb_217997490.png",
    "motivo": "",
    "pensaba": ""
@@ -270,6 +274,7 @@
    "rr": 4.03,
    "duration": "0h 17m",
    "image": "assets/charts/218409065.png",
+   "image_m1": "assets/charts/218409065_m1.png",
    "thumb": "assets/charts/thumb_218409065.png",
    "motivo": "",
    "pensaba": ""
@@ -297,6 +302,7 @@
    "rr": 1.64,
    "duration": "1h 28m",
    "image": "assets/charts/218640024.png",
+   "image_m1": "assets/charts/218640024_m1.png",
    "thumb": "assets/charts/thumb_218640024.png",
    "motivo": "",
    "pensaba": ""
@@ -324,6 +330,7 @@
    "rr": 1.7,
    "duration": "1h 18m",
    "image": "assets/charts/219180717.png",
+   "image_m1": "assets/charts/219180717_m1.png",
    "thumb": "assets/charts/thumb_219180717.png",
    "motivo": "",
    "pensaba": ""
@@ -351,6 +358,7 @@
    "rr": 2.34,
    "duration": "0h 19m",
    "image": "assets/charts/219620664.png",
+   "image_m1": "assets/charts/219620664_m1.png",
    "thumb": "assets/charts/thumb_219620664.png",
    "motivo": "",
    "pensaba": ""
@@ -378,6 +386,7 @@
    "rr": 2.48,
    "duration": "3h 57m",
    "image": "assets/charts/220106415.png",
+   "image_m1": "assets/charts/220106415_m1.png",
    "thumb": "assets/charts/thumb_220106415.png",
    "motivo": "",
    "pensaba": ""
@@ -405,6 +414,7 @@
    "rr": 2.68,
    "duration": "0h 27m",
    "image": "assets/charts/220482516.png",
+   "image_m1": "assets/charts/220482516_m1.png",
    "thumb": "assets/charts/thumb_220482516.png",
    "motivo": "",
    "pensaba": ""
@@ -432,6 +442,7 @@
    "rr": null,
    "duration": "0h 08m",
    "image": "assets/charts/221020038.png",
+   "image_m1": "assets/charts/221020038_m1.png",
    "thumb": "assets/charts/thumb_221020038.png",
    "motivo": "",
    "pensaba": ""
@@ -459,6 +470,7 @@
    "rr": 3.37,
    "duration": "0h 23m",
    "image": "assets/charts/221031832.png",
+   "image_m1": "assets/charts/221031832_m1.png",
    "thumb": "assets/charts/thumb_221031832.png",
    "motivo": "",
    "pensaba": ""
@@ -486,6 +498,7 @@
    "rr": 2.04,
    "duration": "0h 03m",
    "image": "assets/charts/221093730.png",
+   "image_m1": "assets/charts/221093730_m1.png",
    "thumb": "assets/charts/thumb_221093730.png",
    "motivo": "",
    "pensaba": ""
@@ -513,6 +526,7 @@
    "rr": null,
    "duration": "0h 24m",
    "image": "assets/charts/221099515.png",
+   "image_m1": "assets/charts/221099515_m1.png",
    "thumb": "assets/charts/thumb_221099515.png",
    "motivo": "",
    "pensaba": ""
@@ -540,6 +554,7 @@
    "rr": 2.64,
    "duration": "2h 45m",
    "image": "assets/charts/221612229.png",
+   "image_m1": "assets/charts/221612229_m1.png",
    "thumb": "assets/charts/thumb_221612229.png",
    "motivo": "",
    "pensaba": ""
@@ -567,6 +582,7 @@
    "rr": 4.78,
    "duration": "1h 32m",
    "image": "assets/charts/222281506.png",
+   "image_m1": "assets/charts/222281506_m1.png",
    "thumb": "assets/charts/thumb_222281506.png",
    "motivo": "",
    "pensaba": ""
