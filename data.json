@@ -1,7 +1,7 @@
 {
  "account": "FundingPips 20992473",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-12T07:46:39",
+ "generated": "2026-10-12T07:47:53",
  "summary": {
   "start": 25000.0,
   "balance": 24836.82,
@@ -616,9 +616,9 @@
    "pips": -2.1,
    "rr": 2.05,
    "duration": "0h 10m",
-   "image": null,
-   "image_m1": null,
-   "thumb": null,
+   "image": "assets/charts/287397382.png",
+   "image_m1": "assets/charts/287397382_m1.png",
+   "thumb": "assets/charts/thumb_287397382.png",
    "motivo": "",
    "pensaba": ""
   }
