@@ -1,24 +1,24 @@
 {
  "account": "FundingPips 20992473",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-09T16:21:19",
+ "generated": "2026-10-12T07:46:39",
  "summary": {
   "start": 25000.0,
-  "balance": 25003.42,
-  "net": 3.42,
-  "trades": 16,
+  "balance": 24836.82,
+  "net": -163.18,
+  "trades": 17,
   "wins": 5,
-  "losses": 11,
-  "win_rate": 0.3125,
-  "profit_factor": 1.0,
+  "losses": 12,
+  "win_rate": 0.29411764705882354,
+  "profit_factor": 0.88,
   "avg_win": 240.39,
-  "avg_loss": -108.96,
+  "avg_loss": -113.76,
   "max_dd": 726.99,
   "max_dd_pct": 2.91,
-  "gross": 349.36,
-  "commission": -345.94,
+  "gross": 224.41,
+  "commission": -387.59,
   "best": 335.77,
-  "worst": -161.94
+  "worst": -166.6
  },
  "curve": [
   {
@@ -136,6 +136,13 @@
    "net": -3.13,
    "balance": 25003.42,
    "ticket": 222281506
+  },
+  {
+   "label": "2026.10.12 16:43:30",
+   "profit": -124.95,
+   "net": -166.6,
+   "balance": 24836.82,
+   "ticket": 287397382
   }
  ],
  "trades": [
@@ -584,6 +591,34 @@
    "image": "assets/charts/222281506.png",
    "image_m1": "assets/charts/222281506_m1.png",
    "thumb": "assets/charts/thumb_222281506.png",
+   "motivo": "",
+   "pensaba": ""
+  },
+  {
+   "ticket": 287397382,
+   "symbol": "EURUSD",
+   "type": "sell",
+   "volume": 5.95,
+   "open_srv": "2026.10.12 16:32:50",
+   "close_srv": "2026.10.12 16:43:30",
+   "date_srv": "2026-10-12",
+   "open_mx": "2026-10-12T07:32:50",
+   "close_mx": "2026-10-12T07:43:30",
+   "date": "2026-10-12",
+   "open_price": 1.11784,
+   "sl": 1.11805,
+   "tp": 1.11741,
+   "close_price": 1.11805,
+   "digits": 5,
+   "commission": -41.65,
+   "profit": -124.95,
+   "net": -166.6,
+   "pips": -2.1,
+   "rr": 2.05,
+   "duration": "0h 10m",
+   "image": null,
+   "image_m1": null,
+   "thumb": null,
    "motivo": "",
    "pensaba": ""
   }
