@@ -100,7 +100,7 @@ function resumen(){const s=D.summary,T=D.trades,W=T.filter(t=>t.net>0),L=T.filte
 function byDay(){const m={};D.trades.forEach(t=>(m[t.date_srv]=m[t.date_srv]||[]).push(t));return m}
 function calendario(dir){const v=$('#calendario');
   if(!v.querySelector('.calwrap')){v.innerHTML=`<div class="cal-h"><button class="ib" id="pm">‹</button><div style="text-align:center"><b id="mt"></b><br><small id="ms"></small></div><button class="ib" id="nm">›</button></div>
-    <div class="calwrap card" style="padding:8px"><div class="cal"></div></div><div id="wk"></div><p class="k" style="text-align:center">Fecha servidor MT5 (GMT+3) · grande = Profit, N = neto (color por neto)<br>Desliza para cambiar de mes · toca un día</p>`;
+    <div class="calwrap card" style="padding:8px"><div class="cal"></div></div><div id="wk"></div><p class="k" style="text-align:center">Fecha servidor MT5 (GMT+3) · resultado neto (con comisiones)<br>Desliza para cambiar de mes · toca un día</p>`;
     $('#pm').onclick=()=>month(-1);$('#nm').onclick=()=>month(1);
     const w=$('.calwrap',v);let sx,sy;w.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
     w.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-sx;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(t.clientY-sy)*1.5)month(dx<0?1:-1)});}
@@ -108,9 +108,9 @@ function calendario(dir){const v=$('#calendario');
   let h='',tot=0,gt=0,cnt=0,wd=0,ld=0;['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].forEach(d=>h+=`<div class="dn">${d}</div>`);
   for(let i=0;i<first;i++)h+='<div class="day x"></div>';
   for(let d=1;d<=n;d++){const k=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,ts=bd[k];let c='',inner='';
-    if(ts){const net=ts.reduce((a,t)=>a+t.net,0),gp=ts.reduce((a,t)=>a+t.profit,0);tot+=net;gt+=gp;cnt+=ts.length;net>=0?wd++:ld++;c=net>=0?'g':'r';inner=`<span class="${cls(gp)}" style="font-weight:600">${(gp>0?'+':'')+fmt(gp,0)}</span><span class="k" style="font-size:9px">N ${(net>0?'+':'')+fmt(net,0)}</span><span class="n">${ts.length} op</span>`}
+    if(ts){const net=ts.reduce((a,t)=>a+t.net,0),gp=ts.reduce((a,t)=>a+t.profit,0);tot+=net;gt+=gp;cnt+=ts.length;net>=0?wd++:ld++;c=net>=0?'g':'r';inner=`<span class="${cls(net)}" style="font-weight:600">${(net>0?'+':'')+fmt(net,0)}</span><span class="n">${ts.length} op</span>`}
     h+=`<div class="day ${c} ${k===today?'today':''}" style="animation-delay:${(first+d)*12}ms" ${ts?`data-k="${k}"`:''}><b>${d}</b>${inner}</div>`}
-  const g=$('.cal',v),put=()=>{g.innerHTML=h;$('#mt').textContent=MESES[m]+' '+y;$('#ms').innerHTML=cnt?`<span class="${cls(gt)}">Profit ${usd(gt)}</span> · <span class="${cls(tot)}">Neto ${usd(tot)}</span> · ${cnt} op`:'Sin operaciones';
+  const g=$('.cal',v),put=()=>{g.innerHTML=h;$('#mt').textContent=MESES[m]+' '+y;$('#ms').innerHTML=cnt?`<span class="${cls(tot)}">Neto ${usd(tot)}</span> · ${cnt} op`:'Sin operaciones';
     $('#wk').innerHTML=cnt?`<div class="grid"><div class="card"><div class="k">Días verdes</div><div class="v pos">${wd}</div></div><div class="card"><div class="k">Días rojos</div><div class="v neg">${ld}</div></div></div>`:'';
     $$('.day[data-k]',g).forEach(e=>e.onclick=()=>{buzz();daySheet(e.dataset.k)})};
   if(!dir)return put();
