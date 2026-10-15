@@ -1,24 +1,24 @@
 {
  "account": "FundingPips 21058378",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-15T08:38:10",
+ "generated": "2026-10-15T08:44:30",
  "summary": {
   "start": 25000.0,
-  "balance": 24848.3,
-  "net": -151.7,
-  "trades": 1,
+  "balance": 24688.4,
+  "net": -311.6,
+  "trades": 2,
   "wins": 0,
-  "losses": 1,
+  "losses": 2,
   "win_rate": 0.0,
   "profit_factor": 0.0,
   "avg_win": 0,
-  "avg_loss": -151.7,
-  "max_dd": 151.7,
-  "max_dd_pct": 0.61,
-  "gross": -123.0,
-  "commission": -28.7,
+  "avg_loss": -155.8,
+  "max_dd": 311.6,
+  "max_dd_pct": 1.25,
+  "gross": -254.2,
+  "commission": -57.4,
   "best": -151.7,
-  "worst": -151.7
+  "worst": -159.9
  },
  "curve": [
   {
@@ -31,6 +31,13 @@
    "net": -151.7,
    "balance": 24848.3,
    "ticket": 290794128
+  },
+  {
+   "label": "2026.10.15 17:43:18",
+   "profit": -131.2,
+   "net": -159.9,
+   "balance": 24688.4,
+   "ticket": 290794875
   }
  ],
  "trades": [
@@ -59,6 +66,34 @@
    "image": "assets/charts/290794128.png",
    "image_m1": "assets/charts/290794128_m1.png",
    "thumb": "assets/charts/thumb_290794128.png",
+   "motivo": "",
+   "pensaba": ""
+  },
+  {
+   "ticket": 290794875,
+   "symbol": "EURUSD",
+   "type": "buy",
+   "volume": 4.1,
+   "open_srv": "2026.10.15 17:36:10",
+   "close_srv": "2026.10.15 17:43:18",
+   "date_srv": "2026-10-15",
+   "open_mx": "2026-10-15T08:36:10",
+   "close_mx": "2026-10-15T08:43:18",
+   "date": "2026-10-15",
+   "open_price": 1.12205,
+   "sl": 1.12173,
+   "tp": 1.12268,
+   "close_price": 1.12173,
+   "digits": 5,
+   "commission": -28.7,
+   "profit": -131.2,
+   "net": -159.9,
+   "pips": -3.2,
+   "rr": 1.97,
+   "duration": "0h 07m",
+   "image": "assets/charts/290794875.png",
+   "image_m1": "assets/charts/290794875_m1.png",
+   "thumb": "assets/charts/thumb_290794875.png",
    "motivo": "",
    "pensaba": ""
   }
