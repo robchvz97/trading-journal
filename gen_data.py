@@ -7,7 +7,8 @@ import csv, json, os, sys, shutil, datetime as dt
 HERE=os.path.dirname(os.path.abspath(__file__))
 CSV=next((a for a in sys.argv[1:] if not a.startswith('--')), os.path.join(HERE,'..','journal','trades.csv'))
 CHARTS=os.path.join(os.path.dirname(os.path.abspath(CSV)),'charts')
-START=25000.0; SHIFT=dt.timedelta(hours=9)
+START=25000.0;  # FundingPips 21058378: 24971.30 tras comisión -28.70 en el primer OPEN
+SHIFT=dt.timedelta(hours=9)
 OUT=os.path.join(HERE,'data.json')
 old={}
 if os.path.exists(OUT):
@@ -47,7 +48,7 @@ summary=dict(start=START,balance=bal,net=net,trades=n,wins=len(W),losses=len(L),
     win_rate=len(W)/n if n else 0,profit_factor=round(sum(W)/abs(sum(L)),2) if L and sum(L) else None,
     avg_win=round(sum(W)/len(W),2) if W else 0,avg_loss=round(sum(L)/len(L),2) if L else 0,
     max_dd=round(mdd,2),max_dd_pct=round(mdd/START*100,2),gross=round(sum(t['profit'] for t in trades),2),
-    commission=round(sum(t['commission'] for t in trades),2),best=max(t['net'] for t in trades),worst=min(t['net'] for t in trades))
-json.dump(dict(account='FundingPips 20992473',timezone='hora CDMX (UTC-6)',generated=dt.datetime.now().isoformat(timespec='seconds'),
+    commission=round(sum(t['commission'] for t in trades),2),best=max((t['net'] for t in trades),default=0),worst=min((t['net'] for t in trades),default=0))
+json.dump(dict(account='FundingPips 21058378',timezone='hora CDMX (UTC-6)',generated=dt.datetime.now().isoformat(timespec='seconds'),
     summary=summary,curve=curve,trades=trades),open(OUT,'w'),ensure_ascii=False,indent=1)
 print(f'data.json: {n} trades, neto {net:+.2f}, balance {bal:.2f}, maxDD {mdd:.2f}')

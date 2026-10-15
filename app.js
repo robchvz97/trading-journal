@@ -65,7 +65,7 @@ const crosshair={id:'xh',afterDraw(c){const a=c.tooltip&&c.tooltip.getActiveElem
   g.save();g.strokeStyle='rgba(209,212,220,.45)';g.setLineDash([4,4]);g.lineWidth=1;g.beginPath();g.moveTo(x,ar.top);g.lineTo(x,ar.bottom);g.moveTo(ar.left,y);g.lineTo(ar.right,y);g.stroke();
   g.setLineDash([]);g.fillStyle='#2962ff';g.beginPath();g.arc(x,y,5,0,7);g.fill();g.strokeStyle='#fff';g.lineWidth=2;g.stroke();g.restore()}};
 function resumen(){const s=D.summary,T=D.trades,W=T.filter(t=>t.net>0),L=T.filter(t=>t.net<=0),av=a=>a.length?a.reduce((x,t)=>x+t.profit,0)/a.length:0,P=T.map(t=>t.profit);
-  const G={aw:av(W),al:av(L),best:Math.max(...P),worst:Math.min(...P)};
+  const G={aw:av(W),al:av(L),best:P.length?Math.max(...P):0,worst:P.length?Math.min(...P):0};
   const cu=(v,o={})=>`<span data-cu="${v}" data-dec="${o.dec??2}" data-pre="${o.pre||''}" data-suf="${o.suf||''}" data-sign="${o.sign?1:0}" data-from="${o.from||0}">${(o.sign&&v>0?'+':'')+fmt(v,o.dec??2)}${o.suf||''}</span>`;
   const m=(k,v,c='')=>`<div class="card press"><div class="k">${k}</div><div class="v ${c}">${v}</div></div>`;
   $('#resumen').innerHTML=`<div class="card"><div class="k">Balance (inicial ${fmt(s.start)})</div><div class="big">${cu(s.balance,{suf:' USD',from:s.start})}</div><div class="k">${s.trades} operaciones · ${D.account}</div>
