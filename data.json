@@ -1,7 +1,7 @@
 {
  "account": "FundingPips 21058378",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-19T11:01:47",
+ "generated": "2026-10-19T11:05:30",
  "summary": {
   "start": 25000.0,
   "balance": 24697.82,
@@ -354,10 +354,10 @@
    "symbol": "EURUSD",
    "type": "buy",
    "volume": 3.57,
-   "open_srv": "2026.10.19 18:26:00",
+   "open_srv": "2026.10.19 18:26:06",
    "close_srv": "2026.10.19 18:39:47",
    "date_srv": "2026-10-19",
-   "open_mx": "2026-10-19T09:26:00",
+   "open_mx": "2026-10-19T09:26:06",
    "close_mx": "2026-10-19T09:39:47",
    "date": "2026-10-19",
    "open_price": 1.12189,
