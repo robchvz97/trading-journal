@@ -1,22 +1,22 @@
 {
  "account": "FundingPips 21058378",
  "timezone": "hora CDMX (UTC-6)",
- "generated": "2026-10-22T14:54:10",
+ "generated": "2026-10-23T08:05:45",
  "summary": {
   "start": 25000.0,
-  "balance": 24967.28,
-  "net": -32.72,
-  "trades": 22,
+  "balance": 24781.64,
+  "net": -218.36,
+  "trades": 23,
   "wins": 7,
-  "losses": 15,
-  "win_rate": 0.3181818181818182,
-  "profit_factor": 0.98,
+  "losses": 16,
+  "win_rate": 0.30434782608695654,
+  "profit_factor": 0.89,
   "avg_win": 255.7,
-  "avg_loss": -121.51,
-  "max_dd": 442.69,
-  "max_dd_pct": 1.77,
-  "gross": 601.9,
-  "commission": -634.62,
+  "avg_loss": -125.52,
+  "max_dd": 597.81,
+  "max_dd_pct": 2.39,
+  "gross": 441.25,
+  "commission": -659.61,
   "best": 420.0,
   "worst": -237.69
  },
@@ -61,122 +61,129 @@
    "ticket": 291116018
   },
   {
+   "label": "2026.10.16 07:07:07",
+   "profit": -160.65,
+   "net": -185.64,
+   "balance": 24774.96,
+   "ticket": 291167678
+  },
+  {
    "label": "2026.10.16 18:33:52",
    "profit": 189.0,
    "net": 159.6,
-   "balance": 25120.2,
+   "balance": 24934.56,
    "ticket": 291804827
   },
   {
    "label": "2026.10.16 20:39:04",
    "profit": -86.52,
    "net": -115.36,
-   "balance": 25004.84,
+   "balance": 24819.2,
    "ticket": 291912596
   },
   {
    "label": "2026.10.19 18:06:15",
    "profit": 10.71,
    "net": -14.28,
-   "balance": 24990.56,
+   "balance": 24804.92,
    "ticket": 306663871
   },
   {
    "label": "2026.10.19 18:25:01",
    "profit": -124.95,
    "net": -149.94,
-   "balance": 24840.62,
+   "balance": 24654.98,
    "ticket": 306698520
   },
   {
    "label": "2026.10.19 18:39:47",
    "profit": -117.81,
    "net": -142.8,
-   "balance": 24697.82,
+   "balance": 24512.18,
    "ticket": 306701763
   },
   {
    "label": "2026.10.19 18:56:28",
    "profit": 239.19,
    "net": 214.2,
-   "balance": 24912.02,
+   "balance": 24726.38,
    "ticket": 306718927
   },
   {
    "label": "2026.10.19 20:27:04",
    "profit": 8.0,
    "net": -20.0,
-   "balance": 24892.02,
+   "balance": 24706.38,
    "ticket": 306781553
   },
   {
    "label": "2026.10.19 20:38:06",
    "profit": -74.7,
    "net": -103.75,
-   "balance": 24788.27,
+   "balance": 24602.63,
    "ticket": 306799487
   },
   {
    "label": "2026.10.19 21:36:41",
    "profit": 224.1,
    "net": 195.05,
-   "balance": 24983.32,
+   "balance": 24797.68,
    "ticket": 306817166
   },
   {
    "label": "2026.10.21 15:18:11",
    "profit": -120.35,
    "net": -149.4,
-   "balance": 24833.92,
+   "balance": 24648.28,
    "ticket": 308655501
   },
   {
    "label": "2026.10.21 15:36:18",
    "profit": 340.0,
    "net": 305.0,
-   "balance": 25138.92,
+   "balance": 24953.28,
    "ticket": 308669958
   },
   {
    "label": "2026.10.21 20:39:51",
    "profit": -80.0,
    "net": -115.0,
-   "balance": 25023.92,
+   "balance": 24838.28,
    "ticket": 309046855
   },
   {
    "label": "2026.10.21 21:00:17",
    "profit": -100.0,
    "net": -135.0,
-   "balance": 24888.92,
+   "balance": 24703.28,
    "ticket": 309054086
   },
   {
    "label": "2026.10.22 15:50:29",
    "profit": -145.0,
    "net": -180.0,
-   "balance": 24708.92,
+   "balance": 24523.28,
    "ticket": 309929945
   },
   {
    "label": "2026.10.22 16:24:44",
    "profit": 260.0,
    "net": 225.0,
-   "balance": 24933.92,
+   "balance": 24748.28,
    "ticket": 309939023
   },
   {
    "label": "2026.10.22 18:50:07",
    "profit": -208.5,
    "net": -237.69,
-   "balance": 24696.23,
+   "balance": 24510.59,
    "ticket": 310202497
   },
   {
    "label": "2026.10.22 23:53:26",
    "profit": 300.24,
    "net": 271.05,
-   "balance": 24967.28,
+   "balance": 24781.64,
    "ticket": 310294212
   }
  ],
@@ -318,6 +325,34 @@
    "image": "assets/charts/291116018.png",
    "image_m1": "assets/charts/291116018_m1.png",
    "thumb": "assets/charts/thumb_291116018.png",
+   "motivo": "",
+   "pensaba": ""
+  },
+  {
+   "ticket": 291167678,
+   "symbol": "EURUSD",
+   "type": "buy",
+   "volume": 3.57,
+   "open_srv": "2026.10.16 07:03:10",
+   "close_srv": "2026.10.16 07:07:07",
+   "date_srv": "2026-10-16",
+   "open_mx": "2026-10-15T22:03:10",
+   "close_mx": "2026-10-15T22:07:07",
+   "date": "2026-10-15",
+   "open_price": 1.12348,
+   "sl": 1.12303,
+   "tp": 1.12415,
+   "close_price": 1.12303,
+   "digits": 5,
+   "commission": -24.99,
+   "profit": -160.65,
+   "net": -185.64,
+   "pips": -4.5,
+   "rr": 1.49,
+   "duration": "0h 03m",
+   "image": "assets/charts/291167678.png",
+   "image_m1": "assets/charts/291167678_m1.png",
+   "thumb": "assets/charts/thumb_291167678.png",
    "motivo": "",
    "pensaba": ""
   },
